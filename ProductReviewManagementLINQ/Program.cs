@@ -38,7 +38,7 @@ namespace ProductReviewManagementLINQ
                 while (true)
                 {
                     ProductReviewManagment prm = new ProductReviewManagment();
-                    Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\n0: Exit \n");
+                    Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\\n4: CountProductIdUsingGroupBy\\n0: Exit \\n\"");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
                     {
@@ -56,6 +56,8 @@ namespace ProductReviewManagementLINQ
                             prm.RetriveRecordsWithRatingGreaterThan3(list);
                             break;
                         case 4:
+                            Console.WriteLine("count of review present for each productID :");
+                            prm.CountProductIdUsingGroupBy(list);
                             break;
                         case 5:
                             break;

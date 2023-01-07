@@ -22,5 +22,14 @@ namespace ProductReviewManagementLINQ
             var allRecords = list.Where(P => P.Rating > 3 && (P.ProductID == 1) || (P.ProductID == 4) || (P.ProductID == 9)).ToList();      //using lambda expression
             Program.DisplayProducts(allRecords);
         }
+        public void CountProductIdUsingGroupBy(List<ProductReviewTable> list)
+        {
+            Console.WriteLine("\n Count ProductId Using GroupBy ");
+            var res = list.GroupBy(p => p.ProductID).Select(p => new { Id = p.Key, count = p.Count() });
+            foreach (var p in res)
+            {
+                Console.WriteLine("ProductID=" + p.Id + " Count=" + p.count);
+            }
+        }
     }
 }
