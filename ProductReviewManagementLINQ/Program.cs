@@ -38,7 +38,8 @@ namespace ProductReviewManagementLINQ
                 while (true)
                 {
                     ProductReviewManagment prm = new ProductReviewManagment();
-                    Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\\n4: CountProductIdUsingGroupBy\\n5: GetProductIDAndReview\ns0: Exit \\n\"");
+                    Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\n4: CountProductIdUsingGroupBy\n5: GetProductIDAndReview\n" +
+                        "6: Skip5Records\n0: Exit \n");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
                     {
@@ -62,8 +63,8 @@ namespace ProductReviewManagementLINQ
                         case 5:
                             prm.GetProductIDAndReview(list);
                             break;
-                            break;
                         case 6:
+                            prm.Skip5Records(list);
                             break;
                         case 7:
                             break;

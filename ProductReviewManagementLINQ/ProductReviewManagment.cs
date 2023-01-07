@@ -40,5 +40,11 @@ namespace ProductReviewManagementLINQ
                 Console.WriteLine("Product ID=" + p.Id + " Review=" + p.Review);
             }
         }
+        public void Skip5Records(List<ProductReviewTable> list)
+        {
+            Console.WriteLine("skipping 5 records");
+            var res = list.Skip(5).ToList();
+            Program.DisplayProducts(res);
+        }
     }
 }
