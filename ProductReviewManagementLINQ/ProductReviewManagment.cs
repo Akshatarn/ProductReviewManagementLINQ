@@ -17,5 +17,10 @@ namespace ProductReviewManagementLINQ
             var top3Records = list.OrderByDescending(P => P.Rating).Take(3).ToList();       //using lambda expression
             Program.DisplayProducts(top3Records);
         }
+        public void RetriveRecordsWithRatingGreaterThan3(List<ProductReviewTable> list)
+        {
+            var allRecords = list.Where(P => P.Rating > 3 && (P.ProductID == 1) || (P.ProductID == 4) || (P.ProductID == 9)).ToList();      //using lambda expression
+            Program.DisplayProducts(allRecords);
+        }
     }
 }

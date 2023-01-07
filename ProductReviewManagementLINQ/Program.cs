@@ -37,6 +37,7 @@ namespace ProductReviewManagementLINQ
                 ProductReviewTable ProductReview = new ProductReviewTable();
                 while (true)
                 {
+                    ProductReviewManagment prm = new ProductReviewManagment();
                     Console.WriteLine("\nChoose option\n1: Display all records\n2: Top 3 records by rating\n3: display records whose rating > 3\n0: Exit \n");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
@@ -51,6 +52,8 @@ namespace ProductReviewManagementLINQ
                             ProductReviewManagment.RetriveTopThreeRecords(list);
                             break;
                         case 3:
+                            Console.WriteLine("\nRecords With Rating Greater Than 3 or id =1 or 4 or 9 :");
+                            prm.RetriveRecordsWithRatingGreaterThan3(list);
                             break;
                         case 4:
                             break;
